@@ -1,0 +1,100 @@
+@CHARSET "utf-8";
+
+
+.tweet {
+	text-align:left;
+	position:absolute;
+	padding-top:7px;
+	background-image:url(../img/tooltip/tooltip_head.png);
+	background-repeat:no-repeat;
+	z-index:1;
+}
+
+div.over{
+	z-index:100;
+}
+
+div.over p{
+	background-color:#fdeff2;
+}
+
+.tweet .icon {
+	width:50px;
+}
+
+.tweet p{
+	padding:7px 10px 0px 10px;
+	color:#006e54;
+	font-weight:bold;
+	background-image:url(../img/tooltip/tooltip_body.png);
+	background-repeat:repeat-y;
+	background-color:#ffffff;
+	width:300px;
+}
+
+.small{
+	font-size:x-small;
+}
+
+.medium{
+	
+}
+
+.medium-large{
+	font-size:medium;
+}
+
+.large{
+	font-size:large
+}
+
+.tweet p a{
+	text-decoration:none;
+	color:#00a381;
+}
+
+.tweet .tooltip_footer{
+	height:20px;
+	width:320px;
+	background-image:url(../img/tooltip/tooltip_foot.png);
+	background-repeat:no-repeat;
+}
+
+.tweet span.tweet_info{
+	font-size:small;
+	display:block;
+	text-align:right;
+}
+
+.tweet span.user{
+	padding-right:6px;
+	color:#007b43;
+}
+
+.tweet span.created_at{
+	color:#92b5a9;
+}
+
+/** setting */
+#setting {
+	text-align:left;
+}
+#setting table th{
+	vertical-align:top;
+	width:100px;
+	text-align:center;
+}
+
+#setting #picker {
+	width:195px;
+	float:left;
+}
+
+#setting #color {
+	margin-top:20px;
+	width:200px;
+}
+
+#setting #url{
+	width:300px;
+}

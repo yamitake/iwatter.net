@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>tweetストリーミングサーチサービス | iwatter.net</title>
+    <meta name="keywords" content="iwatter.net,いわったー,iwatter,twitter,tweet,おめでとう,噴出し,クリエイティブ,アンビエントメディア">
+    <meta name="description" content="つぶやきを吹き出し風に表示するwebサイトです。イベント時の閲覧や、スクリーンセーバーとしてお楽しみください。">
+    <link href="./css/common.css" rel="stylesheet" type="text/css" media="all">
+    <link href="./css/ui-lightness/jquery-ui-1.7.2.custom.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
+        <h1><a name="top" id="top" href="./"> <img alt="iwatter.net" src="./img/title.png" /> </a></h1>
+        <h2><span>β version 0.92</span> 「<span id="collect_word">おめでとう</span>」をストリーミングサーチ！</h2>
+        <div id="setting_area">
+          <a href="javascript:void(0);" id="show_setting"> <img src="./img/icon/setting.png" alt="setting" /> </a>
+        </div>
+        <div id="search_area">
+          <form id="search_form" action="./index.html" method="get">
+            <input type="text" name="q" id="search_word" maxlength="20" value="おめでとう"/>
+            <input type="submit" id="set_word" value="tweet検索" />
+          </form>
+        </div>
+      </div>
+      <div id="main">
+        <div id="contents">
+          <div style="top: 69.543px; left: 188.981px; opacity: 1;" class="tweet">
+            <p>
+              こんにちは、このサイトの製作者yamitakeです。
+              このページは、右上の検索ワードの呟きをひたすら表示するだけのアプリとなっております。
+              イベント時などのつぶやきを閲覧したり、スクリーンセーバーの代わりとする楽しみ方を提供します。
+              ご意見、ご要望などはtwitterでお伝えください. <span class="tweet_info"><span class="user">yamitake</span> <span class="created_at">Monday, December 11, 2009</span>
+            </p>
+            <div class="tooltip_footer">
+              &nbsp;
+            </div>
+            <a name="" target="_blank" href="http://twitter.com/yamitake"> <img alt="yamitake" src="https://si0.twimg.com/profile_images/1810716743/image.jpeg" class="icon"/> </a>
+            <br />
+            <span itemscope="" itemref="rectangle" itemtype="http://growbutton.com/ns#button"> <span itemprop="url">http://iwatter.net</span> <span itemprop="title">tweetストリーミングサーチサービス | iwatter.net</span> </span>
+          </div>
+        </div>
+        <img class="loading" alt="loading" src="./img/loading_bg.gif" />
+        <div id="setting" title="setting" style="display:none;">
+          <table>
+            <tbody>
+              <tr>
+                <th>表示モード</th>
+                <td><label >
+                  <input value="always" name="mode" type="radio" checked="checked"/>
+                  always </label><label>
+                  <input value="updating" name="mode" type="radio" />
+                  updating </label>
+                <ul>
+                  <li>
+                    always:一定間隔で表示し続けます。※つぶやきが重複する可能性があります。
+                  </li>
+                  <li>
+                    updating:検索結果が更新されたら表示します。
+                  </li>
+                </ul></td>
+              </tr>
+              <tr>
+                <th>フォントサイズ</th>
+                <td><label>
+                  <input name="font" type="radio" value="small"/>
+                  <span class="small">小</span> </label><label>
+                  <input name="font" type="radio" value="medium" checked="checked"/>
+                  <span class="medium">中</span> </label><label>
+                  <input name="font" type="radio" value="medium-large">
+                  <span class="medium-large">大</span> </label><label>
+                  <input name="font" type="radio" value="large"/>
+                  <span class="large">特大</span> </label></td>
+              </tr>
+              <tr>
+                <th>背景色</th>
+                <td><div id="picker"></div>
+                <input type="text" id="color" name="color" value="#ffffff" />
+                </td>
+              </tr>
+              <tr>
+                <th>背景画像</th>
+                <td>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>URL:</th>
+                      <td>
+                      <input type="text" id="url" name="url" value="" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>繰り返し</th>
+                      <td><label>
+                        <input type="radio" name="background-repeat" value="repeat" checked="checked">
+                        縦横に繰り返し(repeat) </label>
+                      <br />
+                      <label>
+                        <input type="radio" name="background-repeat" value="no-repeat" >
+                        繰り返さない(no-repeat) </label>
+                      <br />
+                      <label>
+                        <input type="radio" name="background-repeat" value="repeat-x">
+                        横に繰り返し(repeat-x) </label>
+                      <br />
+                      <label>
+                        <input type="radio" name="background-repeat" value="repeat-y">
+                        縦に繰り返し(repeat-y) </label></td>
+                    </tr>
+                    <tr style="display:none;">
+                      <th> 固定 </th>
+                      <td><label>
+                        <input type="radio" name="background-attachment" value="fixed" checked="checked">
+                        する(fixed) </label><label>
+                        <input type="radio" name="background-attachment" value="scroll">
+                        しない(scroll) </label></td>
+                    </tr>
+                    <tr>
+                      <th> 位置 </th>
+                      <td><label>
+                        <input type="radio" name="background-position" value="center center" checked="checked">
+                        中央(center center) </label>
+                      <br />
+                      <label>
+                        <input type="radio" name="background-position" value="right bottom">
+                        右下(right bottom) </label>
+                      <br />
+                      <label>
+                        <input type="radio" name="background-position" value="left bottom">
+                        左下(left bottom); </label></td>
+                    </tr>
+                  </tbody>
+                </table></td>
+              </tr>
+              <!--
+              <tr>
+              <th>表示間隔(ms)</th>
+              <td>
+              <input name="interval_time" >
+              </td>
+              </tr>
+              <tr>
+              <th colspan="2">
+              <a href="javascript:void(0);">
+              詳細設定
+              </a>
+              </th>
+              </tr>
+              <tr class="Details">
+              <th>
+
+              </th>
+              <td></td>
+              </tr>
+              <tr class="Details">
+              <th>
+              </th>
+              <td></td>
+              </tr>
+              <tr class="Details">
+              <th>
+              </th>
+              <td></td>
+              </tr>
+              -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="footer">
+        Powerd by yapr
+      </div>
+    </div>
+    <script type="text/javascript" src="./js/lib/swfobject.js"></script>
+    <script type="text/javascript" src="./js/lib/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="./js/lib/jquery-ui-1.7.2.custom.min.js"></script>
+    <script type="text/javascript" src="./js/lib/plugin/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="./js/lib/plugin/jquery.cookie.js"></script>
+    <script type="text/javascript" src="./js/lib/plugin/farbtastic.js"></script>
+    <script type="text/javascript" src="./js/tweet_config.js"></script>
+    <script type="text/javascript" src="./js/tweet.js"></script>
+    <script type="text/javascript" src="./js/tweet_setting.js"></script>
+    <script type="text/javascript" src="./js/google_analytics.js"></script>
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-1623421-2");
+        pageTracker._trackPageview();
+      } catch(err) {
+      }
+    </script>
+    <script type="text/javascript" src="http://growbutton.com/javascripts/button.js?apikey=3d4e5960-ed74-012e-8abb-34ef8b111eb0&shape=rectangle&insert=false"></script>
+  </body>
+</html>

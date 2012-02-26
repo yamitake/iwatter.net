@@ -1,0 +1,13 @@
+@CHARSET "utf-8";
+
+/** terms */
+#wrapper .terms{
+	width:800px;
+	padding:25px;
+	text-align:left;
+	color:#333333;
+}
+
+.terms ol{
+	padding-bottom:20px;
+}
