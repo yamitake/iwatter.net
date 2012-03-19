@@ -19,7 +19,7 @@
         </div>
         <div id="search_area">
           <form id="search_form" action="./index.html" method="get">
-            <input type="text" name="q" id="search_word" maxlength="20" value="おめでとう"/>
+            <input type="text" name="q" id="search_word" maxlength="20" value="おめでとう" x-webkit-speech onwebkitspeechchange="$('#search_form').submit();" />
             <input type="submit" id="set_word" value="tweet検索" />
           </form>
         </div>
