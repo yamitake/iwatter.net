@@ -71,12 +71,18 @@ function popTweet(){
 
 	var center_position = {x:canvas_width/2 - MESSAGE_TEMPLATE_WIDTH/2,
 							y:canvas_height/2 -MESSAGE_TEMPLATE_HEIGHT/2};
-
+							
 	var tweet = tweets.pop();
+	var download_url = "";
+	var text = tweet["text"].replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
+    	 download_url = url;
+    	return '<a target="_blank" href="'+url+'">'+url+'</a>';
+   	});
 	var div = $('<div class="tweet" style="top:'+ center_position.y +'px;left:'+ center_position.x +'px;">' +
 						'<p class="'+ FONT_CLASS +'">' + createTweetText(tweet["text"]) + 
 							'<span class="tweet_info">' +
 								'<span class="user">' + tweet["from_user"] + '</span>' +
+								(download_url ? ('<a target="_blank" href="' + download_url +'"><img src="http://capture.heartrails.com/300x240/free?' + download_url + '" /></a>') : ('')) +
 								'<span class="created_at">' + relative_time(tweet["created_at"]) + '</span>' +
 							'</span>' +
 						'</p>' +
