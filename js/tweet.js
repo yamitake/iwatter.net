@@ -82,7 +82,7 @@ function popTweet(){
 						'<p class="'+ FONT_CLASS +'">' + createTweetText(tweet["text"]) + 
 							'<span class="tweet_info">' +
 								'<span class="user">' + tweet["from_user"] + '</span>' +
-								(download_url ? ('<a target="_blank" href="' + download_url +'"><img src="http://capture.heartrails.com/300x240/free?' + download_url + '" /></a>') : ('')) +
+								//(download_url ? ('<a target="_blank" href="' + download_url +'"><img src="http://capture.heartrails.com/300x240/free?' + download_url + '" /></a>') : ('')) +
 								'<span class="created_at">' + relative_time(tweet["created_at"]) + '</span>' +
 							'</span>' +
 						'</p>' +
